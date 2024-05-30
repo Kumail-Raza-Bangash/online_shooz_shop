@@ -7,11 +7,12 @@ class AppColor {
   static const Color greyColor = Color(0xFFB2BABB);
   static const Color redColor = Color(0xFFC0392B);
 
-  static const Color primaryColor = Color(0xFFE67E22);
-  static const Color secondaryColor = Color(0xFFF1C40F);
+  static const Color primaryColor = Color(0xFF8E44AD);
+  static const Color secondaryColor = Color(0xFFC39BD3);
 
-  static const Color bgPrimaryColor = Color(0xFFD35400);
-  static const Color bgSecondaryColor = Color(0xFFF39C12);
+  static const Color backgroundColor = Color(0xFFE2E2E2);
+  static const Color bgPrimaryColor = Color(0xFF8E44AD);
+  static const Color bgSecondaryColor = Color(0xFFC39BD3);
 
   static const Color transparentColor = Colors.transparent;
 
