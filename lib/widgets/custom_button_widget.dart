@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_video_card_practice/resources/colors.dart';
-import 'package:flutter_video_card_practice/resources/dimensions.dart';
+import 'package:online_shooz_shop/resources/colors.dart';
+import 'package:online_shooz_shop/resources/dimensions.dart';
 
 class CustomButtonWidget extends StatelessWidget {
   final VoidCallback onPressed;

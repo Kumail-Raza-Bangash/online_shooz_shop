@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_video_card_practice/resources/colors.dart';
+import 'package:online_shooz_shop/resources/colors.dart';
 import 'dart:math';
 
-import 'package:flutter_video_card_practice/resources/dimensions.dart';
+import 'package:online_shooz_shop/resources/dimensions.dart';
 
 class CustomLoadingWidget extends StatefulWidget {
   const CustomLoadingWidget({super.key});
