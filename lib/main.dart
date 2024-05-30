@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:online_shooz_shop/provider/main_screen_provider.dart';
 import 'package:online_shooz_shop/view/main_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,10 +12,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      home: MainScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => MainScreenProvider()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        home: MainScreen(),
+      ),
     );
   }
 }
