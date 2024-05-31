@@ -8,3 +8,12 @@ TextStyle appStyle(double size, Color color, FontWeight fw) {
     fontWeight: fw,
   );
 }
+
+TextStyle appStyleWithHt(double size, Color color, FontWeight fw, double ht) {
+  return GoogleFonts.ubuntu(
+    fontSize: size,
+    color: color,
+    fontWeight: fw,
+    height: ht,
+  );
+}
