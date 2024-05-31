@@ -3,7 +3,7 @@ import 'package:online_shooz_shop/provider/main_screen_provider.dart';
 import 'package:online_shooz_shop/resources/colors.dart';
 import 'package:online_shooz_shop/view/pages/add_page.dart';
 import 'package:online_shooz_shop/view/pages/cart_page.dart';
-import 'package:online_shooz_shop/view/pages/home_page.dart';
+import 'package:online_shooz_shop/view/pages/home_page/home_page.dart';
 import 'package:online_shooz_shop/view/pages/profile_page.dart';
 import 'package:online_shooz_shop/view/pages/search_page.dart';
 import 'package:online_shooz_shop/view/widgets/custom_bottom_navbar.dart';
