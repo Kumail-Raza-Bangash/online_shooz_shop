@@ -31,21 +31,24 @@ class _ProductCardState extends State<ProductCard> {
       padding:
           EdgeInsets.fromLTRB(Dimensions.width10, 0, Dimensions.width20, 0),
       child: ClipRRect(
-        borderRadius: BorderRadius.circular(Dimensions.radius15),
+        borderRadius: BorderRadius.circular(Dimensions.radius20),
         child: Container(
           height: Dimensions.screenHeight,
           width: Dimensions.screenWidth * 0.6,
+          padding: EdgeInsets.all(Dimensions.width10),
           decoration: const BoxDecoration(
             boxShadow: [
               BoxShadow(
-                  color: AppColor.whiteColor,
-                  spreadRadius: 1,
-                  blurRadius: 1,
-                  offset: Offset(2, 3))
+                color: AppColor.whiteColor,
+                spreadRadius: 1,
+                blurRadius: 7,
+                offset: Offset(1, 1),
+              ),
             ],
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Stack(
                 children: [
@@ -62,7 +65,10 @@ class _ProductCardState extends State<ProductCard> {
                     right: 10,
                     child: GestureDetector(
                       onTap: () {},
-                      child: const Icon(Icons.favorite),
+                      child: Icon(
+                        Icons.favorite,
+                        size: Dimensions.iconSize25,
+                      ),
                     ),
                   )
                 ],
@@ -124,6 +130,7 @@ class _ProductCardState extends State<ProductCard> {
                           selected: selected,
                           visualDensity: VisualDensity.compact,
                           selectedColor: AppColor.primaryColor,
+                          disabledColor: AppColor.greyColor,
                         ),
                       ],
                     )

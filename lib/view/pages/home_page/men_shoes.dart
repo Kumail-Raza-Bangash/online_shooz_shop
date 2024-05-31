@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:online_shooz_shop/resources/app_style.dart';
 import 'package:online_shooz_shop/resources/colors.dart';
 import 'package:online_shooz_shop/resources/dimensions.dart';
+import 'package:online_shooz_shop/view/pages/home_page/product_card.dart';
 
 class MenShoes extends StatelessWidget {
   const MenShoes({
@@ -18,11 +19,12 @@ class MenShoes extends StatelessWidget {
             itemCount: 6,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return Container(
-                color: Colors.grey,
-                height: Dimensions.screenHeight,
-                width: Dimensions.screenWidth * 0.6,
-                margin: EdgeInsets.all(Dimensions.width05),
+              return const ProductCard(
+                id: '1',
+                name: "Adidas NMD",
+                category: "Man Shoes",
+                price: "\$ 100",
+                image: "assets/images/Shoes_02.png",
               );
             },
           ),
