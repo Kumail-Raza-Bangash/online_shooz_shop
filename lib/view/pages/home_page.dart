@@ -41,7 +41,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               child: Container(
                 padding: EdgeInsets.fromLTRB(
                   Dimensions.width10,
-                  Dimensions.height10,
+                  Dimensions.height20,
                   Dimensions.width05,
                   Dimensions.height10,
                 ),
@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         1.2,
                       ),
                     ),
-                    SizedBox(height: Dimensions.height05),
+                    SizedBox(height: Dimensions.height10),
 
                     //tabbar
                     TabBar(
@@ -98,7 +98,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             // Tabbar
 
             Padding(
-              padding: EdgeInsets.only(top: Dimensions.screenHeight * 0.225),
+              padding: EdgeInsets.only(
+                top: Dimensions.screenHeight * 0.25,
+                left: Dimensions.width10,
+              ),
               child: TabBarView(
                 controller: _tabController,
                 children: [
@@ -134,41 +137,75 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   //
                   Column(
                     children: [
-                      Container(
-                        height: Dimensions.height30 * 10,
-                        width: Dimensions.screenWidth,
-                        color: Colors.orangeAccent,
-                        child: const Center(
-                          child: Text("3"),
+                      SizedBox(
+                        height: Dimensions.screenHeight * 0.4,
+                        child: ListView.builder(
+                          itemCount: 6,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              color: Colors.grey,
+                              height: Dimensions.screenHeight,
+                              width: Dimensions.screenWidth * 0.6,
+                              margin: EdgeInsets.all(Dimensions.width05),
+                            );
+                          },
                         ),
                       ),
-                      SizedBox(height: Dimensions.height10),
                       Column(
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Latest Shoews",
-                                style: appStyle(
-                                  Dimensions.font20,
-                                  AppColor.primaryColor,
-                                  FontWeight.bold,
-                                ),
-                              ),
-                              Row(
-                                children: [
-                                  Text(
-                                    "Show All",
-                                    style: appStyle(
-                                      Dimensions.font15,
-                                      AppColor.greyColor,
-                                      FontWeight.bold,
-                                    ),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(
+                              Dimensions.width05,
+                              Dimensions.height10,
+                              Dimensions.width05,
+                              Dimensions.height10,
+                            ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "Latest Shoews",
+                                  style: appStyle(
+                                    Dimensions.font20,
+                                    AppColor.primaryColor,
+                                    FontWeight.bold,
                                   ),
-                                ],
-                              )
-                            ],
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Show All",
+                                      style: appStyle(
+                                        Dimensions.font15,
+                                        AppColor.greyColor,
+                                        FontWeight.bold,
+                                      ),
+                                    ),
+                                    Icon(
+                                      Icons.arrow_right,
+                                      size: Dimensions.iconSize25,
+                                    )
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            height: Dimensions.height30 * 5,
+                            color: Colors.orangeAccent,
+                            child: ListView.builder(
+                              itemCount: 6,
+                              scrollDirection: Axis.vertical,
+                              itemBuilder: (context, index) {
+                                return Container(
+                                  color: Colors.grey,
+                                  height: Dimensions.screenHeight,
+                                  width: Dimensions.screenWidth * 0.28,
+                                  margin: EdgeInsets.all(Dimensions.width05),
+                                );
+                              },
+                            ),
                           )
                         ],
                       )
