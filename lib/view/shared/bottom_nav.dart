@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:online_shooz_shop/controllers/mainscreen_provider.dart';
-import 'package:online_shooz_shop/view/shared/bottom_nav_widget.dart';
+import 'package:online_shooz_shop/view/widgets/bottom_nav_widget.dart';
 import 'package:provider/provider.dart';
 
 class BottoNavBar extends StatelessWidget {

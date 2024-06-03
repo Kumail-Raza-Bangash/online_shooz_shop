@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:online_shooz_shop/controllers/mainscreen_provider.dart';
 import 'package:online_shooz_shop/controllers/product_provider.dart';
-import 'package:online_shooz_shop/view/ui/mainscreen.dart';
+import 'package:online_shooz_shop/view/screens/mainscreen.dart';
 import 'package:provider/provider.dart';
 
 // entrypoint of the app

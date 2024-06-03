@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:online_shooz_shop/controllers/mainscreen_provider.dart';
 import 'package:online_shooz_shop/view/shared/bottom_nav.dart';
-import 'package:online_shooz_shop/view/ui/cartpage.dart';
-import 'package:online_shooz_shop/view/ui/homepage.dart';
-import 'package:online_shooz_shop/view/ui/profile.dart';
-import 'package:online_shooz_shop/view/ui/searchpage.dart';
+import 'package:online_shooz_shop/view/screens/cartpage.dart';
+import 'package:online_shooz_shop/view/screens/homepage.dart';
+import 'package:online_shooz_shop/view/screens/profile.dart';
+import 'package:online_shooz_shop/view/screens/searchpage.dart';
 import 'package:provider/provider.dart';
 
 // ignore: must_be_immutable
