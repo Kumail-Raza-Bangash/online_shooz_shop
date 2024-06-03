@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:online_shop/views/shared/appstyle.dart';
+import 'package:online_shooz_shop/view/shared/appstyle.dart';
 
 class CheckoutButton extends StatelessWidget {
   const CheckoutButton({
-    super.key, this.onTap, required this.label,
+    super.key,
+    this.onTap,
+    required this.label,
   });
   final void Function()? onTap;
   final String label;
@@ -16,8 +18,11 @@ class CheckoutButton extends StatelessWidget {
         padding: const EdgeInsets.all(8),
         child: Container(
           decoration: const BoxDecoration(
-              color: Colors.black,
-              borderRadius: BorderRadius.all(Radius.circular(12))),
+            color: Colors.black,
+            borderRadius: BorderRadius.all(
+              Radius.circular(10),
+            ),
+          ),
           height: 50,
           width: MediaQuery.of(context).size.width * 0.9,
           child: Center(

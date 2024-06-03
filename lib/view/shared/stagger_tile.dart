@@ -1,9 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:online_shop/views/shared/appstyle.dart';
+import 'package:online_shooz_shop/view/shared/appstyle.dart';
 
 class StaggerTile extends StatefulWidget {
-  const StaggerTile({super.key, required this.imageUrl, required this.name, required this.price});
+  const StaggerTile(
+      {super.key,
+      required this.imageUrl,
+      required this.name,
+      required this.price});
 
   final String imageUrl;
   final String name;
@@ -19,7 +23,9 @@ class _StaggerTileState extends State<StaggerTile> {
     return Container(
       decoration: const BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(16)),
+        borderRadius: BorderRadius.all(
+          Radius.circular(16),
+        ),
       ),
       child: Padding(
         padding: const EdgeInsets.all(8),
@@ -31,21 +37,34 @@ class _StaggerTileState extends State<StaggerTile> {
               imageUrl: widget.imageUrl,
               fit: BoxFit.fill,
             ),
-
             Container(
-              padding:const EdgeInsets.only(top: 12),
+              padding: const EdgeInsets.only(top: 12),
               height: 75,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(widget.name, 
-                  style: appstyleWithHt(20, Colors.black, FontWeight.w700, 1),),
-                  Text(widget.price, 
-                  style: appstyleWithHt(20, Colors.black, FontWeight.w500, 1),)
+                  Text(
+                    widget.name,
+                    style: appstyleWithHt(
+                      20,
+                      Colors.black,
+                      FontWeight.w700,
+                      1,
+                    ),
+                  ),
+                  Text(
+                    widget.price,
+                    style: appstyleWithHt(
+                      20,
+                      Colors.black,
+                      FontWeight.w500,
+                      1,
+                    ),
+                  )
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
-import 'package:online_shop/views/shared/appstyle.dart';
+import 'package:online_shooz_shop/view/shared/appstyle.dart';
 
 class ProductCard extends StatefulWidget {
   const ProductCard(
@@ -33,13 +33,16 @@ class _ProductCardState extends State<ProductCard> {
         child: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width * 0.6,
-          decoration: const BoxDecoration(boxShadow: [
-            BoxShadow(
+          decoration: const BoxDecoration(
+            boxShadow: [
+              BoxShadow(
                 color: Colors.white,
                 spreadRadius: 1,
                 blurRadius: 0.6,
-                offset: Offset(1, 1))
-          ]),
+                offset: Offset(1, 1),
+              ),
+            ],
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -69,12 +72,20 @@ class _ProductCardState extends State<ProductCard> {
                     Text(
                       widget.name,
                       style: appstyleWithHt(
-                          36, Colors.black, FontWeight.bold, 1.1),
+                        36,
+                        Colors.black,
+                        FontWeight.bold,
+                        1.1,
+                      ),
                     ),
                     Text(
                       widget.category,
-                      style:
-                          appstyleWithHt(18, Colors.grey, FontWeight.bold, 1.5),
+                      style: appstyleWithHt(
+                        18,
+                        Colors.grey,
+                        FontWeight.bold,
+                        1.5,
+                      ),
                     )
                   ],
                 ),
@@ -97,10 +108,11 @@ class _ProductCardState extends State<ProductCard> {
                         const SizedBox(
                           width: 5,
                         ),
-                        ChoiceChip(label: const Text(" "), 
-                        selected: selected,
-                        visualDensity: VisualDensity.compact,
-                        selectedColor: Colors.black,
+                        ChoiceChip(
+                          label: const Text(" "),
+                          selected: selected,
+                          visualDensity: VisualDensity.compact,
+                          selectedColor: Colors.black,
                         )
                       ],
                     )

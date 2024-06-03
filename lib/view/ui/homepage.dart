@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:online_shop/models/sneaker_model.dart';
-import 'package:online_shop/services/helper.dart';
-import 'package:online_shop/views/shared/appstyle.dart';
-import 'package:online_shop/views/shared/home_widget.dart';
+import 'package:online_shooz_shop/models/sneaker_model.dart';
+import 'package:online_shooz_shop/services/helper.dart';
+import 'package:online_shooz_shop/view/shared/appstyle.dart';
+import 'package:online_shooz_shop/view/shared/home_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -41,7 +41,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       backgroundColor: const Color(0xFFE2E2E2),
       body: SizedBox(
@@ -52,9 +51,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               padding: const EdgeInsets.fromLTRB(16, 45, 0, 0),
               height: MediaQuery.of(context).size.height * 0.4,
               decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/top_image.png"),
-                      fit: BoxFit.fill)),
+                image: DecorationImage(
+                  image: AssetImage("assets/images/top_image.png"),
+                  fit: BoxFit.fill,
+                ),
+              ),
               child: Container(
                 padding: const EdgeInsets.only(left: 8, bottom: 15),
                 width: MediaQuery.of(context).size.width,
@@ -101,20 +102,23 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   top: MediaQuery.of(context).size.height * 0.25),
               child: Container(
                 padding: const EdgeInsets.only(left: 12),
-                child: TabBarView(controller: _tabController, children: [
-                  HomeWidget(
-                    male: _male,
-                    tabIndex: 0,
-                  ),
-                  HomeWidget(
-                    male: _female,
-                    tabIndex: 1,
-                  ),
-                  HomeWidget(
-                    male: _kids,
-                    tabIndex: 2,
-                  ),
-                ]),
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    HomeWidget(
+                      male: _male,
+                      tabIndex: 0,
+                    ),
+                    HomeWidget(
+                      male: _female,
+                      tabIndex: 1,
+                    ),
+                    HomeWidget(
+                      male: _kids,
+                      tabIndex: 2,
+                    ),
+                  ],
+                ),
               ),
             )
           ],

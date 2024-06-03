@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:online_shop/views/shared/appstyle.dart';
+import 'package:online_shooz_shop/view/shared/appstyle.dart';
 
 class CategoryBtn extends StatelessWidget {
   const CategoryBtn(
@@ -16,12 +16,15 @@ class CategoryBtn extends StatelessWidget {
         height: 45,
         width: MediaQuery.of(context).size.width * 0.255,
         decoration: BoxDecoration(
-            border: Border.all(
-              width: 1,
-              color: buttonClr,
-              style: BorderStyle.solid,
-            ),
-            borderRadius: const BorderRadius.all(Radius.circular(9))),
+          border: Border.all(
+            width: 1,
+            color: buttonClr,
+            style: BorderStyle.solid,
+          ),
+          borderRadius: const BorderRadius.all(
+            Radius.circular(10),
+          ),
+        ),
         child: Center(
           child: Text(
             label,
