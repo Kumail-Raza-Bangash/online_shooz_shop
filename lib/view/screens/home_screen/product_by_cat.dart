@@ -5,7 +5,6 @@ import 'package:online_shooz_shop/services/helper.dart';
 import 'package:online_shooz_shop/view/resources/appstyle.dart';
 import 'package:online_shooz_shop/view/resources/colors.dart';
 import 'package:online_shooz_shop/view/widgets/custom_button_widget.dart';
-import 'package:online_shooz_shop/view/shared/custom_spacer.dart';
 import 'package:online_shooz_shop/view/shared/latest_shoes.dart';
 
 class ProductByCat extends StatefulWidget {
@@ -182,12 +181,12 @@ class _ProductByCatState extends State<ProductByCat>
               height: MediaQuery.of(context).size.height * 0.7,
               child: Column(
                 children: [
-                  const CustomSpacer(),
+                  const SizedBox(height: 20),
                   Text(
                     "Filter",
                     style: appstyle(40, Colors.black, FontWeight.bold),
                   ),
-                  const CustomSpacer(),
+                  const SizedBox(height: 30),
                   Text(
                     "Gender",
                     style: appstyle(20, Colors.black, FontWeight.bold),
@@ -209,14 +208,12 @@ class _ProductByCatState extends State<ProductByCat>
                       ),
                     ],
                   ),
-                  const CustomSpacer(),
+                  const SizedBox(height: 30),
                   Text(
                     "Category",
                     style: appstyle(20, AppColor.blackColor, FontWeight.w600),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
                   const Row(
                     children: [
                       CustomButtonWidget(
@@ -233,12 +230,12 @@ class _ProductByCatState extends State<ProductByCat>
                       ),
                     ],
                   ),
-                  const CustomSpacer(),
+                  const SizedBox(height: 30),
                   Text(
                     "Price",
                     style: appstyle(20, AppColor.blackColor, FontWeight.bold),
                   ),
-                  const CustomSpacer(),
+                  const SizedBox(height: 20),
                   Slider(
                     value: value,
                     activeColor: AppColor.blackColor,
@@ -250,14 +247,12 @@ class _ProductByCatState extends State<ProductByCat>
                     secondaryTrackValue: 200,
                     onChanged: (double value) {},
                   ),
-                  const CustomSpacer(),
+                  const SizedBox(height: 30),
                   Text(
                     "Brand",
                     style: appstyle(20, Colors.black, FontWeight.bold),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
                   Container(
                     padding: const EdgeInsets.all(8),
                     height: 80,
