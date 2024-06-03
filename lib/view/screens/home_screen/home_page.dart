@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:online_shooz_shop/models/sneaker_model.dart';
 import 'package:online_shooz_shop/services/helper.dart';
 import 'package:online_shooz_shop/view/resources/appstyle.dart';
-import 'package:online_shooz_shop/view/shared/home_widget.dart';
+import 'package:online_shooz_shop/view/shared/home_card_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -65,12 +65,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                     Text(
                       "Athletics Shoes",
                       style: appstyleWithHt(
-                          42, Colors.white, FontWeight.bold, 1.5),
+                          40, Colors.white, FontWeight.bold, 1.5),
                     ),
                     Text(
                       "Collection",
                       style: appstyleWithHt(
-                          42, Colors.white, FontWeight.bold, 1.2),
+                          40, Colors.white, FontWeight.bold, 1.2),
                     ),
                     TabBar(
                       padding: EdgeInsets.zero,
@@ -105,15 +105,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    HomeWidget(
+                    HomeCardWidget(
                       male: _male,
                       tabIndex: 0,
                     ),
-                    HomeWidget(
+                    HomeCardWidget(
                       male: _female,
                       tabIndex: 1,
                     ),
-                    HomeWidget(
+                    HomeCardWidget(
                       male: _kids,
                       tabIndex: 2,
                     ),

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:online_shooz_shop/view/resources/appstyle.dart';
+import 'package:online_shooz_shop/view/resources/colors.dart';
 
-class ProductCard extends StatefulWidget {
-  const ProductCard(
+class ProductCardWidget extends StatefulWidget {
+  const ProductCardWidget(
       {super.key,
       required this.price,
       required this.category,
@@ -18,10 +19,10 @@ class ProductCard extends StatefulWidget {
   final String image;
 
   @override
-  State<ProductCard> createState() => _ProductCardState();
+  State<ProductCardWidget> createState() => _ProductCardWidgetState();
 }
 
-class _ProductCardState extends State<ProductCard> {
+class _ProductCardWidgetState extends State<ProductCardWidget> {
   @override
   Widget build(BuildContext context) {
     bool selected = true;
@@ -36,7 +37,7 @@ class _ProductCardState extends State<ProductCard> {
           decoration: const BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Colors.white,
+                color: AppColor.whiteColor,
                 spreadRadius: 1,
                 blurRadius: 0.6,
                 offset: Offset(1, 1),
@@ -51,8 +52,10 @@ class _ProductCardState extends State<ProductCard> {
                   Container(
                     height: MediaQuery.of(context).size.height * 0.23,
                     decoration: BoxDecoration(
-                        image:
-                            DecorationImage(image: NetworkImage(widget.image))),
+                      image: DecorationImage(
+                        image: NetworkImage(widget.image),
+                      ),
+                    ),
                   ),
                   Positioned(
                     right: 10,
@@ -72,8 +75,8 @@ class _ProductCardState extends State<ProductCard> {
                     Text(
                       widget.name,
                       style: appstyleWithHt(
-                        36,
-                        Colors.black,
+                        35,
+                        AppColor.blackColor,
                         FontWeight.bold,
                         1.1,
                       ),
@@ -81,8 +84,8 @@ class _ProductCardState extends State<ProductCard> {
                     Text(
                       widget.category,
                       style: appstyleWithHt(
-                        18,
-                        Colors.grey,
+                        20,
+                        AppColor.greyColor,
                         FontWeight.bold,
                         1.5,
                       ),
@@ -103,22 +106,21 @@ class _ProductCardState extends State<ProductCard> {
                       children: [
                         Text(
                           "Colors",
-                          style: appstyle(18, Colors.grey, FontWeight.w500),
+                          style:
+                              appstyle(20, AppColor.greyColor, FontWeight.w500),
                         ),
-                        const SizedBox(
-                          width: 5,
-                        ),
+                        const SizedBox(width: 5),
                         ChoiceChip(
                           label: const Text(" "),
                           selected: selected,
                           visualDensity: VisualDensity.compact,
                           selectedColor: Colors.black,
-                        )
+                        ),
                       ],
-                    )
+                    ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
