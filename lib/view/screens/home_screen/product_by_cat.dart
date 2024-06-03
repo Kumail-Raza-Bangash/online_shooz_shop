@@ -72,9 +72,11 @@ class _ProductByCatState extends State<ProductByCat>
               padding: const EdgeInsets.fromLTRB(16, 45, 0, 0),
               height: MediaQuery.of(context).size.height * 0.4,
               decoration: const BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage("assets/images/top_image.png"),
-                      fit: BoxFit.fill)),
+                image: DecorationImage(
+                  image: AssetImage("assets/images/top_image.png"),
+                  fit: BoxFit.fill,
+                ),
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -89,7 +91,7 @@ class _ProductByCatState extends State<ProductByCat>
                           },
                           child: const Icon(
                             AntDesign.close,
-                            color: Colors.white,
+                            color: AppColor.whiteColor,
                           ),
                         ),
                         GestureDetector(
@@ -98,7 +100,7 @@ class _ProductByCatState extends State<ProductByCat>
                           },
                           child: const Icon(
                             FontAwesome.sliders,
-                            color: Colors.white,
+                            color: AppColor.whiteColor,
                           ),
                         )
                       ],
@@ -110,9 +112,10 @@ class _ProductByCatState extends State<ProductByCat>
                     indicatorColor: Colors.transparent,
                     controller: _tabController,
                     isScrollable: true,
-                    labelColor: Colors.white,
-                    labelStyle: appstyle(24, Colors.white, FontWeight.bold),
-                    unselectedLabelColor: Colors.grey.withOpacity(0.3),
+                    labelColor: AppColor.whiteColor,
+                    labelStyle:
+                        appstyle(24, AppColor.whiteColor, FontWeight.bold),
+                    unselectedLabelColor: AppColor.greyColor.withOpacity(0.7),
                     tabs: const [
                       Tab(
                         text: "Men Shoes",
@@ -153,12 +156,12 @@ class _ProductByCatState extends State<ProductByCat>
     return showModalBottomSheet(
       context: context,
       isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      barrierColor: Colors.white54,
+      backgroundColor: AppColor.transparentColor,
+      barrierColor: AppColor.greyColor,
       builder: (context) => Container(
         height: MediaQuery.of(context).size.height * 0.84,
         decoration: const BoxDecoration(
-          color: Colors.white,
+          color: AppColor.whiteColor,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(25),
             topRight: Radius.circular(25),
@@ -166,15 +169,15 @@ class _ProductByCatState extends State<ProductByCat>
         ),
         child: Column(
           children: [
-            const SizedBox(
-              height: 10,
-            ),
+            const SizedBox(height: 10),
             Container(
-              height: 5,
+              height: 7,
               width: 40,
               decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                color: Colors.black38,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10),
+                ),
+                color: AppColor.greyColor,
               ),
             ),
             SizedBox(
@@ -184,12 +187,12 @@ class _ProductByCatState extends State<ProductByCat>
                   const SizedBox(height: 20),
                   Text(
                     "Filter",
-                    style: appstyle(40, Colors.black, FontWeight.bold),
+                    style: appstyle(40, AppColor.blackColor, FontWeight.bold),
                   ),
                   const SizedBox(height: 30),
                   Text(
                     "Gender",
-                    style: appstyle(20, Colors.black, FontWeight.bold),
+                    style: appstyle(20, AppColor.blackColor, FontWeight.bold),
                   ),
                   const SizedBox(height: 20),
                   const Row(
@@ -211,7 +214,7 @@ class _ProductByCatState extends State<ProductByCat>
                   const SizedBox(height: 30),
                   Text(
                     "Category",
-                    style: appstyle(20, AppColor.blackColor, FontWeight.w600),
+                    style: appstyle(20, AppColor.blackColor, FontWeight.bold),
                   ),
                   const SizedBox(height: 20),
                   const Row(

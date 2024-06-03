@@ -25,8 +25,6 @@ class ProductCardWidget extends StatefulWidget {
 class _ProductCardWidgetState extends State<ProductCardWidget> {
   @override
   Widget build(BuildContext context) {
-    bool selected = true;
-
     return Padding(
       padding: const EdgeInsets.fromLTRB(8, 0, 20, 0),
       child: ClipRRect(
@@ -68,14 +66,14 @@ class _ProductCardWidgetState extends State<ProductCardWidget> {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8),
+                padding: const EdgeInsets.only(left: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       widget.name,
                       style: appstyleWithHt(
-                        35,
+                        30,
                         AppColor.blackColor,
                         FontWeight.bold,
                         1.1,
@@ -94,27 +92,30 @@ class _ProductCardWidgetState extends State<ProductCardWidget> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 8, right: 8),
+                padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       widget.price,
-                      style: appstyle(30, Colors.black, FontWeight.w600),
+                      style: appstyle(25, Colors.black, FontWeight.w600),
                     ),
                     Row(
                       children: [
                         Text(
                           "Colors",
                           style:
-                              appstyle(20, AppColor.greyColor, FontWeight.w500),
+                              appstyle(15, AppColor.greyColor, FontWeight.w500),
                         ),
                         const SizedBox(width: 5),
-                        ChoiceChip(
-                          label: const Text(" "),
-                          selected: selected,
-                          visualDensity: VisualDensity.compact,
-                          selectedColor: Colors.black,
+                        const CircleAvatar(
+                          radius: 7,
+                          backgroundColor: AppColor.blackColor,
+                        ),
+                        const SizedBox(width: 5),
+                        const CircleAvatar(
+                          radius: 7,
+                          backgroundColor: AppColor.redColor,
                         ),
                       ],
                     ),

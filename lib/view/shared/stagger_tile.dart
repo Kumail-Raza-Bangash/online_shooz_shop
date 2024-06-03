@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:online_shooz_shop/view/resources/appstyle.dart';
+import 'package:online_shooz_shop/view/resources/colors.dart';
 
 class StaggerTile extends StatefulWidget {
   const StaggerTile(
@@ -22,13 +23,13 @@ class _StaggerTileState extends State<StaggerTile> {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        color: Colors.white,
+        color: AppColor.whiteColor,
         borderRadius: BorderRadius.all(
-          Radius.circular(16),
+          Radius.circular(15),
         ),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.all(10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,8 +39,12 @@ class _StaggerTileState extends State<StaggerTile> {
               fit: BoxFit.fill,
             ),
             Container(
-              padding: const EdgeInsets.only(top: 12),
-              height: 75,
+              padding: const EdgeInsets.only(
+                left: 5,
+                top: 5,
+                right: 5,
+              ),
+              height: 80,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,18 +53,18 @@ class _StaggerTileState extends State<StaggerTile> {
                     widget.name,
                     style: appstyleWithHt(
                       20,
-                      Colors.black,
-                      FontWeight.w700,
+                      AppColor.blackColor,
+                      FontWeight.w600,
                       1,
                     ),
                   ),
                   Text(
                     widget.price,
                     style: appstyleWithHt(
-                      20,
-                      Colors.black,
-                      FontWeight.w500,
-                      1,
+                      15,
+                      AppColor.greyColor,
+                      FontWeight.w600,
+                      2.0,
                     ),
                   )
                 ],
