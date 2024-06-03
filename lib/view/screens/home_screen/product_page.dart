@@ -8,6 +8,7 @@ import 'package:online_shooz_shop/controllers/product_provider.dart';
 import 'package:online_shooz_shop/models/sneaker_model.dart';
 import 'package:online_shooz_shop/services/helper.dart';
 import 'package:online_shooz_shop/view/resources/appstyle.dart';
+import 'package:online_shooz_shop/view/resources/colors.dart';
 import 'package:online_shooz_shop/view/shared/checkout_btn.dart';
 import 'package:provider/provider.dart';
 
@@ -78,14 +79,14 @@ class _ProductPageState extends State<ProductPage> {
                               },
                               child: const Icon(
                                 AntDesign.close,
-                                color: Colors.black,
+                                color: AppColor.whiteColor,
                               ),
                             ),
                             GestureDetector(
                               onTap: null,
                               child: const Icon(
                                 Ionicons.ellipsis_horizontal,
-                                color: Colors.black,
+                                color: AppColor.whiteColor,
                               ),
                             )
                           ],
@@ -103,71 +104,69 @@ class _ProductPageState extends State<ProductPage> {
                               height: MediaQuery.of(context).size.height * 0.5,
                               width: MediaQuery.of(context).size.width,
                               child: PageView.builder(
-                                  scrollDirection: Axis.horizontal,
-                                  itemCount: sneaker!.imageUrl.length,
-                                  controller: pageController,
-                                  onPageChanged: (page) {
-                                    productNotifier.activePage = page;
-                                  },
-                                  itemBuilder: (context, int index) {
-                                    return Stack(
-                                      children: [
-                                        Container(
-                                          height: MediaQuery.of(context)
+                                scrollDirection: Axis.horizontal,
+                                itemCount: sneaker!.imageUrl.length,
+                                controller: pageController,
+                                onPageChanged: (page) {
+                                  productNotifier.activePage = page;
+                                },
+                                itemBuilder: (context, int index) {
+                                  return Stack(
+                                    children: [
+                                      Container(
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.39,
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        color: AppColor.greyColor,
+                                        child: CachedNetworkImage(
+                                          imageUrl: sneaker.imageUrl[index],
+                                          fit: BoxFit.contain,
+                                        ),
+                                      ),
+                                      Positioned(
+                                          top: MediaQuery.of(context)
                                                   .size
                                                   .height *
-                                              0.39,
-                                          width:
-                                              MediaQuery.of(context).size.width,
-                                          color: Colors.grey.shade300,
-                                          child: CachedNetworkImage(
-                                            imageUrl: sneaker.imageUrl[index],
-                                            fit: BoxFit.contain,
+                                              0.1,
+                                          right: 20,
+                                          child: const Icon(
+                                            AntDesign.hearto,
+                                            color: AppColor.greyColor,
+                                          )),
+                                      Positioned(
+                                        bottom: 0,
+                                        right: 0,
+                                        left: 0,
+                                        height:
+                                            MediaQuery.of(context).size.height *
+                                                0.3,
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: List<Widget>.generate(
+                                            sneaker.imageUrl.length,
+                                            (index) => Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 4),
+                                              child: CircleAvatar(
+                                                radius: 5,
+                                                backgroundColor: productNotifier
+                                                            .activepage !=
+                                                        index
+                                                    ? AppColor.greyColor
+                                                    : AppColor.blackColor,
+                                              ),
+                                            ),
                                           ),
                                         ),
-                                        Positioned(
-                                            top: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.1,
-                                            right: 20,
-                                            child: const Icon(
-                                              AntDesign.hearto,
-                                              color: Colors.grey,
-                                            )),
-                                        Positioned(
-                                            bottom: 0,
-                                            right: 0,
-                                            left: 0,
-                                            height: MediaQuery.of(context)
-                                                    .size
-                                                    .height *
-                                                0.3,
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: List<Widget>.generate(
-                                                  sneaker.imageUrl.length,
-                                                  (index) => Padding(
-                                                        padding:
-                                                            const EdgeInsets
-                                                                .symmetric(
-                                                                horizontal: 4),
-                                                        child: CircleAvatar(
-                                                          radius: 5,
-                                                          backgroundColor:
-                                                              productNotifier
-                                                                          .activepage !=
-                                                                      index
-                                                                  ? Colors.grey
-                                                                  : Colors
-                                                                      .black,
-                                                        ),
-                                                      )),
-                                            )),
-                                      ],
-                                    );
-                                  }),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ),
                             ),
                             Positioned(
                               bottom: 30,
@@ -180,9 +179,9 @@ class _ProductPageState extends State<ProductPage> {
                                   height: MediaQuery.of(context).size.height *
                                       0.645,
                                   width: MediaQuery.of(context).size.width,
-                                  color: Colors.white,
+                                  color: AppColor.whiteColor,
                                   child: Padding(
-                                    padding: const EdgeInsets.all(12),
+                                    padding: const EdgeInsets.all(20),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -190,8 +189,8 @@ class _ProductPageState extends State<ProductPage> {
                                         Text(
                                           sneaker.name,
                                           style: appstyle(
-                                            40,
-                                            Colors.black,
+                                            35,
+                                            AppColor.blackColor,
                                             FontWeight.bold,
                                           ),
                                         ),
@@ -201,13 +200,11 @@ class _ProductPageState extends State<ProductPage> {
                                               sneaker.category,
                                               style: appstyle(
                                                 20,
-                                                Colors.grey,
+                                                AppColor.greyColor,
                                                 FontWeight.w500,
                                               ),
                                             ),
-                                            const SizedBox(
-                                              width: 20,
-                                            ),
+                                            const SizedBox(width: 20),
                                             RatingBar.builder(
                                               initialRating: 4,
                                               minRating: 1,
@@ -222,16 +219,14 @@ class _ProductPageState extends State<ProductPage> {
                                               itemBuilder: (context, _) =>
                                                   const Icon(
                                                 Icons.star,
-                                                size: 18,
-                                                color: Colors.black,
+                                                size: 20,
+                                                color: AppColor.blackColor,
                                               ),
                                               onRatingUpdate: (rating) {},
-                                            )
+                                            ),
                                           ],
                                         ),
-                                        const SizedBox(
-                                          height: 20,
-                                        ),
+                                        const SizedBox(height: 20),
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.spaceBetween,
@@ -239,8 +234,8 @@ class _ProductPageState extends State<ProductPage> {
                                             Text(
                                               "\$${sneaker.price}",
                                               style: appstyle(
-                                                26,
-                                                Colors.black,
+                                                25,
+                                                AppColor.blackColor,
                                                 FontWeight.w600,
                                               ),
                                             ),
@@ -249,32 +244,28 @@ class _ProductPageState extends State<ProductPage> {
                                                 Text(
                                                   "Colors",
                                                   style: appstyle(
-                                                    18,
-                                                    Colors.black,
+                                                    20,
+                                                    AppColor.greyColor,
                                                     FontWeight.w500,
                                                   ),
                                                 ),
-                                                const SizedBox(
-                                                  width: 5,
-                                                ),
+                                                const SizedBox(width: 5),
                                                 const CircleAvatar(
                                                   radius: 7,
-                                                  backgroundColor: Colors.black,
+                                                  backgroundColor:
+                                                      AppColor.blackColor,
                                                 ),
-                                                const SizedBox(
-                                                  width: 5,
-                                                ),
+                                                const SizedBox(width: 5),
                                                 const CircleAvatar(
                                                   radius: 7,
-                                                  backgroundColor: Colors.red,
-                                                )
+                                                  backgroundColor:
+                                                      AppColor.redColor,
+                                                ),
                                               ],
                                             ),
                                           ],
                                         ),
-                                        const SizedBox(
-                                          height: 20,
-                                        ),
+                                        const SizedBox(height: 20),
                                         Column(
                                           children: [
                                             Row(
@@ -283,28 +274,24 @@ class _ProductPageState extends State<ProductPage> {
                                                   "Select sizes",
                                                   style: appstyle(
                                                     20,
-                                                    Colors.black,
+                                                    AppColor.blackColor,
                                                     FontWeight.w600,
                                                   ),
                                                 ),
-                                                const SizedBox(
-                                                  width: 20,
-                                                ),
+                                                const SizedBox(width: 20),
                                                 Text(
                                                   "View size guide",
                                                   style: appstyle(
                                                     20,
-                                                    Colors.grey,
+                                                    AppColor.greyColor,
                                                     FontWeight.w600,
                                                   ),
                                                 ),
                                               ],
                                             ),
-                                            const SizedBox(
-                                              height: 10,
-                                            ),
+                                            const SizedBox(height: 10),
                                             SizedBox(
-                                              height: 40,
+                                              height: 60,
                                               child: ListView.builder(
                                                   itemCount: productNotifier
                                                       .shoeSizes.length,
@@ -320,7 +307,7 @@ class _ProductPageState extends State<ProductPage> {
                                                     return Padding(
                                                       padding: const EdgeInsets
                                                           .symmetric(
-                                                        horizontal: 8.0,
+                                                        horizontal: 5.0,
                                                       ),
                                                       child: ChoiceChip(
                                                         shape:
@@ -329,26 +316,29 @@ class _ProductPageState extends State<ProductPage> {
                                                               BorderRadius
                                                                   .circular(60),
                                                           side: const BorderSide(
-                                                              color:
-                                                                  Colors.black,
+                                                              color: AppColor
+                                                                  .blackColor,
                                                               width: 1,
                                                               style: BorderStyle
                                                                   .solid),
                                                         ),
                                                         disabledColor:
-                                                            Colors.white,
+                                                            AppColor.whiteColor,
                                                         label: Text(
+                                                          textAlign:
+                                                              TextAlign.center,
                                                           sizes['size'],
                                                           style: appstyle(
-                                                              18,
+                                                              20,
                                                               sizes['isSelected']
-                                                                  ? Colors.white
-                                                                  : Colors
-                                                                      .black,
+                                                                  ? AppColor
+                                                                      .whiteColor
+                                                                  : AppColor
+                                                                      .blackColor,
                                                               FontWeight.w500),
                                                         ),
                                                         selectedColor:
-                                                            Colors.black,
+                                                            AppColor.blackColor,
                                                         padding:
                                                             const EdgeInsets
                                                                 .symmetric(
@@ -386,42 +376,37 @@ class _ProductPageState extends State<ProductPage> {
                                             )
                                           ],
                                         ),
-                                        const SizedBox(
-                                          height: 10,
-                                        ),
+                                        const SizedBox(height: 10),
                                         const Divider(
                                           indent: 10,
                                           endIndent: 10,
-                                          color: Colors.black,
+                                          color: AppColor.blackColor,
                                         ),
-                                        const SizedBox(
-                                          height: 10,
-                                        ),
+                                        const SizedBox(height: 10),
                                         SizedBox(
                                           width: MediaQuery.of(context)
                                                   .size
                                                   .width *
-                                              0.8,
+                                              1.0,
                                           child: Text(
                                             sneaker.title,
                                             maxLines: 2,
-                                            style: appstyle(26, Colors.black,
-                                                FontWeight.w700),
+                                            style: appstyle(
+                                              20,
+                                              AppColor.blackColor,
+                                              FontWeight.w700,
+                                            ),
                                           ),
                                         ),
-                                        const SizedBox(
-                                          height: 10,
-                                        ),
+                                        const SizedBox(height: 10),
                                         Text(
                                           sneaker.description,
                                           textAlign: TextAlign.justify,
-                                          maxLines: 4,
-                                          style: appstyle(14, Colors.black,
+                                          maxLines: 5,
+                                          style: appstyle(15, Colors.black,
                                               FontWeight.normal),
                                         ),
-                                        const SizedBox(
-                                          height: 10,
-                                        ),
+                                        const SizedBox(height: 10),
                                         Align(
                                           alignment: Alignment.bottomCenter,
                                           child: Padding(
@@ -429,17 +414,20 @@ class _ProductPageState extends State<ProductPage> {
                                                 const EdgeInsets.only(top: 12),
                                             child: CheckoutButton(
                                               onTap: () async {
-                                                _createCart({
-                                                  "id": sneaker.id,
-                                                  "name": sneaker.name,
-                                                  "category": sneaker.category,
-                                                  "sizes":
-                                                      productNotifier.sizes[0],
-                                                  "imageUrl":
-                                                      sneaker.imageUrl[0],
-                                                  "price": sneaker.price,
-                                                  "qty": 1
-                                                });
+                                                _createCart(
+                                                  {
+                                                    "id": sneaker.id,
+                                                    "name": sneaker.name,
+                                                    "category":
+                                                        sneaker.category,
+                                                    "sizes": productNotifier
+                                                        .sizes[0],
+                                                    "imageUrl":
+                                                        sneaker.imageUrl[0],
+                                                    "price": sneaker.price,
+                                                    "qty": 1,
+                                                  },
+                                                );
                                                 if (kDebugMode) {
                                                   print(sneaker.name);
                                                 }
@@ -449,7 +437,7 @@ class _ProductPageState extends State<ProductPage> {
                                               label: "Add to Cart",
                                             ),
                                           ),
-                                        )
+                                        ),
                                       ],
                                     ),
                                   ),

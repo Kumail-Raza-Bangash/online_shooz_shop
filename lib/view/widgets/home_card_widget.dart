@@ -3,6 +3,7 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:online_shooz_shop/controllers/product_provider.dart';
 import 'package:online_shooz_shop/models/sneaker_model.dart';
 import 'package:online_shooz_shop/view/resources/appstyle.dart';
+import 'package:online_shooz_shop/view/resources/colors.dart';
 import 'package:online_shooz_shop/view/shared/new_shoes.dart';
 import 'package:online_shooz_shop/view/widgets/product_card_widget.dart';
 import 'package:online_shooz_shop/view/screens/home_screen/product_by_cat.dart';
@@ -39,26 +40,26 @@ class HomeCardWidget extends StatelessWidget {
                   itemCount: male!.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    final shoe = snapshot.data![index];
+                    final shoes = snapshot.data![index];
                     return GestureDetector(
                       onTap: () {
-                        productNotifier.shoesSizes = shoe.sizes;
+                        productNotifier.shoesSizes = shoes.sizes;
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => ProductPage(
-                              id: shoe.id,
-                              category: shoe.category,
+                              id: shoes.id,
+                              category: shoes.category,
                             ),
                           ),
                         );
                       },
                       child: ProductCardWidget(
-                        price: "\$${shoe.price}",
-                        category: shoe.category,
-                        id: shoe.id,
-                        name: shoe.name,
-                        image: shoe.imageUrl[0],
+                        price: "\$${shoes.price}",
+                        category: shoes.category,
+                        id: shoes.id,
+                        name: shoes.name,
+                        image: shoes.imageUrl[0],
                       ),
                     );
                   },
@@ -70,13 +71,13 @@ class HomeCardWidget extends StatelessWidget {
         Column(
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(12, 20, 12, 20),
+              padding: const EdgeInsets.fromLTRB(10, 20, 10, 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     "Latest Shoes",
-                    style: appstyle(24, Colors.black, FontWeight.bold),
+                    style: appstyle(25, Colors.black, FontWeight.bold),
                   ),
                   GestureDetector(
                     onTap: () {
@@ -93,11 +94,13 @@ class HomeCardWidget extends StatelessWidget {
                       children: [
                         Text(
                           "Show All",
-                          style: appstyle(22, Colors.black, FontWeight.w500),
+                          style:
+                              appstyle(20, AppColor.greyColor, FontWeight.w500),
                         ),
                         const Icon(
                           AntDesign.caretright,
-                          size: 20,
+                          size: 15,
+                          color: AppColor.greyColor,
                         ),
                       ],
                     ),
