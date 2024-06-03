@@ -3,7 +3,8 @@ import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:online_shooz_shop/models/sneaker_model.dart';
 import 'package:online_shooz_shop/services/helper.dart';
 import 'package:online_shooz_shop/view/resources/appstyle.dart';
-import 'package:online_shooz_shop/view/shared/category_btn.dart';
+import 'package:online_shooz_shop/view/resources/colors.dart';
+import 'package:online_shooz_shop/view/widgets/custom_button_widget.dart';
 import 'package:online_shooz_shop/view/shared/custom_spacer.dart';
 import 'package:online_shooz_shop/view/shared/latest_shoes.dart';
 
@@ -191,60 +192,58 @@ class _ProductByCatState extends State<ProductByCat>
                     "Gender",
                     style: appstyle(20, Colors.black, FontWeight.bold),
                   ),
-                  const SizedBox(
-                    height: 20,
-                  ),
+                  const SizedBox(height: 20),
                   const Row(
                     children: [
-                      CategoryBtn(
+                      CustomButtonWidget(
                         label: "Men",
-                        buttonClr: Colors.black,
+                        buttonClr: AppColor.blackColor,
                       ),
-                      CategoryBtn(
+                      CustomButtonWidget(
                         label: "Women",
-                        buttonClr: Colors.grey,
+                        buttonClr: AppColor.greyColor,
                       ),
-                      CategoryBtn(
+                      CustomButtonWidget(
                         label: "Kids",
-                        buttonClr: Colors.grey,
+                        buttonClr: AppColor.greyColor,
                       ),
                     ],
                   ),
                   const CustomSpacer(),
                   Text(
                     "Category",
-                    style: appstyle(20, Colors.black, FontWeight.w600),
+                    style: appstyle(20, AppColor.blackColor, FontWeight.w600),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   const Row(
                     children: [
-                      CategoryBtn(
+                      CustomButtonWidget(
                         label: "Shoes",
-                        buttonClr: Colors.black,
+                        buttonClr: AppColor.blackColor,
                       ),
-                      CategoryBtn(
+                      CustomButtonWidget(
                         label: "Apparrels",
-                        buttonClr: Colors.grey,
+                        buttonClr: AppColor.greyColor,
                       ),
-                      CategoryBtn(
+                      CustomButtonWidget(
                         label: "Accessories",
-                        buttonClr: Colors.grey,
+                        buttonClr: AppColor.greyColor,
                       ),
                     ],
                   ),
                   const CustomSpacer(),
                   Text(
                     "Price",
-                    style: appstyle(20, Colors.black, FontWeight.bold),
+                    style: appstyle(20, AppColor.blackColor, FontWeight.bold),
                   ),
                   const CustomSpacer(),
                   Slider(
                     value: value,
-                    activeColor: Colors.black,
-                    inactiveColor: Colors.grey,
-                    thumbColor: Colors.black,
+                    activeColor: AppColor.blackColor,
+                    inactiveColor: AppColor.greyColor,
+                    thumbColor: AppColor.blackColor,
                     max: 500,
                     divisions: 50,
                     label: value.toString(),

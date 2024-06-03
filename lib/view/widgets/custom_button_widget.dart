@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:online_shooz_shop/view/resources/appstyle.dart';
 
-class CategoryBtn extends StatelessWidget {
-  const CategoryBtn(
+class CustomButtonWidget extends StatelessWidget {
+  const CustomButtonWidget(
       {super.key, this.onPress, required this.buttonClr, required this.label});
   final void Function()? onPress;
   final Color buttonClr;
@@ -28,7 +28,7 @@ class CategoryBtn extends StatelessWidget {
         child: Center(
           child: Text(
             label,
-            style: appstyle(20, buttonClr, FontWeight.w600),
+            style: appstyle(15, buttonClr, FontWeight.w600),
           ),
         ),
       ),
