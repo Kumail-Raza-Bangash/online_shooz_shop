@@ -4,7 +4,7 @@ import 'package:online_shooz_shop/controllers/product_provider.dart';
 import 'package:online_shooz_shop/models/sneaker_model.dart';
 import 'package:online_shooz_shop/view/resources/appstyle.dart';
 import 'package:online_shooz_shop/view/shared/new_shoes.dart';
-import 'package:online_shooz_shop/view/shared/product_card_widget.dart';
+import 'package:online_shooz_shop/view/widgets/product_card_widget.dart';
 import 'package:online_shooz_shop/view/screens/home_screen/product_by_cat.dart';
 import 'package:online_shooz_shop/view/screens/home_screen/product_page.dart';
 import 'package:provider/provider.dart';

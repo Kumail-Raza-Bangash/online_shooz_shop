@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:online_shooz_shop/models/sneaker_model.dart';
 import 'package:online_shooz_shop/services/helper.dart';
 import 'package:online_shooz_shop/view/resources/appstyle.dart';
-import 'package:online_shooz_shop/view/shared/home_card_widget.dart';
+import 'package:online_shooz_shop/view/widgets/home_card_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
