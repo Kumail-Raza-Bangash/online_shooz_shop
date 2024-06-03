@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:online_shooz_shop/controllers/product_provider.dart';
 import 'package:online_shooz_shop/models/sneaker_model.dart';
-import 'package:online_shooz_shop/view/shared/appstyle.dart';
+import 'package:online_shooz_shop/view/resources/appstyle.dart';
 import 'package:online_shooz_shop/view/shared/new_shoes.dart';
 import 'package:online_shooz_shop/view/shared/product_card.dart';
 import 'package:online_shooz_shop/view/ui/product_by_cat.dart';

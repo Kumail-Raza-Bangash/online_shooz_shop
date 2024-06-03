@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
 import 'package:online_shooz_shop/models/sneaker_model.dart';
 import 'package:online_shooz_shop/services/helper.dart';
-import 'package:online_shooz_shop/view/shared/appstyle.dart';
+import 'package:online_shooz_shop/view/resources/appstyle.dart';
 import 'package:online_shooz_shop/view/shared/category_btn.dart';
 import 'package:online_shooz_shop/view/shared/custom_spacer.dart';
 import 'package:online_shooz_shop/view/shared/latest_shoes.dart';

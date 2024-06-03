@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:online_shooz_shop/view/shared/appstyle.dart';
+import 'package:online_shooz_shop/view/resources/appstyle.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});

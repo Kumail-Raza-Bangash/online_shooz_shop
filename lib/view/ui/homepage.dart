@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:online_shooz_shop/models/sneaker_model.dart';
 import 'package:online_shooz_shop/services/helper.dart';
-import 'package:online_shooz_shop/view/shared/appstyle.dart';
+import 'package:online_shooz_shop/view/resources/appstyle.dart';
 import 'package:online_shooz_shop/view/shared/home_widget.dart';
 
 class HomePage extends StatefulWidget {
