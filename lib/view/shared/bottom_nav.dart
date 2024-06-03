@@ -15,14 +15,14 @@ class BottoNavBar extends StatelessWidget {
       builder: (context, mainScreenNotifier, child) {
         return SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(10),
             child: Container(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
               margin: const EdgeInsets.symmetric(horizontal: 10),
               decoration: const BoxDecoration(
                 color: Colors.black,
                 borderRadius: BorderRadius.all(
-                  Radius.circular(16),
+                  Radius.circular(15),
                 ),
               ),
               child: Row(
@@ -32,6 +32,7 @@ class BottoNavBar extends StatelessWidget {
                     onTap: () {
                       mainScreenNotifier.pageIndex = 0;
                     },
+                    iconSize: mainScreenNotifier.pageIndex == 0 ? 30 : 20,
                     icon: mainScreenNotifier.pageIndex == 0
                         ? MaterialCommunityIcons.home
                         : MaterialCommunityIcons.home_outline,
@@ -40,31 +41,26 @@ class BottoNavBar extends StatelessWidget {
                     onTap: () {
                       mainScreenNotifier.pageIndex = 1;
                     },
+                    iconSize: mainScreenNotifier.pageIndex == 1 ? 30 : 20,
                     icon: mainScreenNotifier.pageIndex == 1
-                        ? Ionicons.search
+                        ? Ionicons.search_outline
                         : Ionicons.search,
                   ),
                   BotomNavWidget(
                     onTap: () {
                       mainScreenNotifier.pageIndex = 2;
                     },
+                    iconSize: mainScreenNotifier.pageIndex == 2 ? 30 : 20,
                     icon: mainScreenNotifier.pageIndex == 2
-                        ? Ionicons.add
-                        : Ionicons.add_circle_outline,
-                  ),
-                  BotomNavWidget(
-                    onTap: () {
-                      mainScreenNotifier.pageIndex = 3;
-                    },
-                    icon: mainScreenNotifier.pageIndex == 3
                         ? Ionicons.cart
                         : Ionicons.cart_outline,
                   ),
                   BotomNavWidget(
                     onTap: () {
-                      mainScreenNotifier.pageIndex = 4;
+                      mainScreenNotifier.pageIndex = 3;
                     },
-                    icon: mainScreenNotifier.pageIndex == 4
+                    iconSize: mainScreenNotifier.pageIndex == 3 ? 30 : 20,
+                    icon: mainScreenNotifier.pageIndex == 3
                         ? Ionicons.person
                         : Ionicons.person_outline,
                   ),

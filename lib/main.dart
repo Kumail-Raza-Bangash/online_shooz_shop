@@ -14,7 +14,7 @@ void main() async {
 
   await Hive.openBox('cart_box');
   await Hive.openBox('fav_box');
-  //method that initializes the app and run top level wigets
+
   runApp(
     MultiProvider(
       providers: [

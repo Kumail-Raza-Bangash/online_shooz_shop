@@ -32,31 +32,18 @@ class CartPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFE2E2E2),
       body: Padding(
-        padding: const EdgeInsets.all(12),
+        padding: const EdgeInsets.all(15),
         child: Stack(
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(
-                  height: 40,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Icon(
-                    AntDesign.close,
-                    color: Colors.black,
-                  ),
-                ),
+                const SizedBox(height: 40),
                 Text(
                   "My Cart",
                   style: appstyle(36, Colors.black, FontWeight.bold),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                const SizedBox(height: 20),
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.65,
                   child: ListView.builder(
