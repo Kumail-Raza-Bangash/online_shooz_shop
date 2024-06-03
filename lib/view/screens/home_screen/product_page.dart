@@ -403,8 +403,11 @@ class _ProductPageState extends State<ProductPage> {
                                           sneaker.description,
                                           textAlign: TextAlign.justify,
                                           maxLines: 5,
-                                          style: appstyle(15, Colors.black,
-                                              FontWeight.normal),
+                                          style: appstyle(
+                                            15,
+                                            AppColor.blackColor,
+                                            FontWeight.normal,
+                                          ),
                                         ),
                                         const SizedBox(height: 10),
                                         Align(
